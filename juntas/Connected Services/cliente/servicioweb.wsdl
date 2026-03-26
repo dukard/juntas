@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="login_admin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="login_adminResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login_adminResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="participantes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="participantesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="participantesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_update_huella">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idparticipante" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="streamhuella" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_update_huellaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_update_huellaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leer_reghuella">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="leer_reghuellaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="leer_reghuellaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reg_asistencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idparticipante" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reg_asistenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reg_asistenciaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reg_asistencia2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idparticipante" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="reg_asistencia2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reg_asistencia2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getdepartamentos">
+        <s:complexType />
+      </s:element>
+      <s:element name="getdepartamentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getdepartamentosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_objetivos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_objetivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_objetivosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_juntas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f_departamento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="f_objetivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_juntasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_juntasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_juntas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objetivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="concepto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="responsable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechainicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechacompromiso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pavance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechajunta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_juntasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_juntasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_juntas3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idadmin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agencia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dpto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objetivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="concepto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="responsable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechainicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechacompromiso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pavance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechajunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_juntas3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_juntas3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_juntas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="concepto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="responsable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechainicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechacompromiso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pavance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechajunta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_juntasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="update_juntasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_juntas3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ids" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="concepto" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="responsable" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechainicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechacompromiso" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pavance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechajunta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_juntas3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="update_juntas3Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_juntas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ids" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_juntasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="delete_juntasResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_archivos">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_archivosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_archivosResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="login_adminSoapIn">
+    <wsdl:part name="parameters" element="tns:login_admin" />
+  </wsdl:message>
+  <wsdl:message name="login_adminSoapOut">
+    <wsdl:part name="parameters" element="tns:login_adminResponse" />
+  </wsdl:message>
+  <wsdl:message name="participantesSoapIn">
+    <wsdl:part name="parameters" element="tns:participantes" />
+  </wsdl:message>
+  <wsdl:message name="participantesSoapOut">
+    <wsdl:part name="parameters" element="tns:participantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_update_huellaSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_update_huella" />
+  </wsdl:message>
+  <wsdl:message name="insert_update_huellaSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_update_huellaResponse" />
+  </wsdl:message>
+  <wsdl:message name="leer_reghuellaSoapIn">
+    <wsdl:part name="parameters" element="tns:leer_reghuella" />
+  </wsdl:message>
+  <wsdl:message name="leer_reghuellaSoapOut">
+    <wsdl:part name="parameters" element="tns:leer_reghuellaResponse" />
+  </wsdl:message>
+  <wsdl:message name="reg_asistenciaSoapIn">
+    <wsdl:part name="parameters" element="tns:reg_asistencia" />
+  </wsdl:message>
+  <wsdl:message name="reg_asistenciaSoapOut">
+    <wsdl:part name="parameters" element="tns:reg_asistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="reg_asistencia2SoapIn">
+    <wsdl:part name="parameters" element="tns:reg_asistencia2" />
+  </wsdl:message>
+  <wsdl:message name="reg_asistencia2SoapOut">
+    <wsdl:part name="parameters" element="tns:reg_asistencia2Response" />
+  </wsdl:message>
+  <wsdl:message name="getdepartamentosSoapIn">
+    <wsdl:part name="parameters" element="tns:getdepartamentos" />
+  </wsdl:message>
+  <wsdl:message name="getdepartamentosSoapOut">
+    <wsdl:part name="parameters" element="tns:getdepartamentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_objetivosSoapIn">
+    <wsdl:part name="parameters" element="tns:get_objetivos" />
+  </wsdl:message>
+  <wsdl:message name="get_objetivosSoapOut">
+    <wsdl:part name="parameters" element="tns:get_objetivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_juntasSoapIn">
+    <wsdl:part name="parameters" element="tns:get_juntas" />
+  </wsdl:message>
+  <wsdl:message name="get_juntasSoapOut">
+    <wsdl:part name="parameters" element="tns:get_juntasResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_juntasSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_juntas" />
+  </wsdl:message>
+  <wsdl:message name="insert_juntasSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_juntasResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_juntas3SoapIn">
+    <wsdl:part name="parameters" element="tns:insert_juntas3" />
+  </wsdl:message>
+  <wsdl:message name="insert_juntas3SoapOut">
+    <wsdl:part name="parameters" element="tns:insert_juntas3Response" />
+  </wsdl:message>
+  <wsdl:message name="update_juntasSoapIn">
+    <wsdl:part name="parameters" element="tns:update_juntas" />
+  </wsdl:message>
+  <wsdl:message name="update_juntasSoapOut">
+    <wsdl:part name="parameters" element="tns:update_juntasResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_juntas3SoapIn">
+    <wsdl:part name="parameters" element="tns:update_juntas3" />
+  </wsdl:message>
+  <wsdl:message name="update_juntas3SoapOut">
+    <wsdl:part name="parameters" element="tns:update_juntas3Response" />
+  </wsdl:message>
+  <wsdl:message name="delete_juntasSoapIn">
+    <wsdl:part name="parameters" element="tns:delete_juntas" />
+  </wsdl:message>
+  <wsdl:message name="delete_juntasSoapOut">
+    <wsdl:part name="parameters" element="tns:delete_juntasResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_archivosSoapIn">
+    <wsdl:part name="parameters" element="tns:get_archivos" />
+  </wsdl:message>
+  <wsdl:message name="get_archivosSoapOut">
+    <wsdl:part name="parameters" element="tns:get_archivosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="serviciowebSoap">
+    <wsdl:operation name="login_admin">
+      <wsdl:input message="tns:login_adminSoapIn" />
+      <wsdl:output message="tns:login_adminSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="participantes">
+      <wsdl:input message="tns:participantesSoapIn" />
+      <wsdl:output message="tns:participantesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_update_huella">
+      <wsdl:input message="tns:insert_update_huellaSoapIn" />
+      <wsdl:output message="tns:insert_update_huellaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="leer_reghuella">
+      <wsdl:input message="tns:leer_reghuellaSoapIn" />
+      <wsdl:output message="tns:leer_reghuellaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reg_asistencia">
+      <wsdl:input message="tns:reg_asistenciaSoapIn" />
+      <wsdl:output message="tns:reg_asistenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="reg_asistencia2">
+      <wsdl:input message="tns:reg_asistencia2SoapIn" />
+      <wsdl:output message="tns:reg_asistencia2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getdepartamentos">
+      <wsdl:input message="tns:getdepartamentosSoapIn" />
+      <wsdl:output message="tns:getdepartamentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_objetivos">
+      <wsdl:input message="tns:get_objetivosSoapIn" />
+      <wsdl:output message="tns:get_objetivosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_juntas">
+      <wsdl:input message="tns:get_juntasSoapIn" />
+      <wsdl:output message="tns:get_juntasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_juntas">
+      <wsdl:input message="tns:insert_juntasSoapIn" />
+      <wsdl:output message="tns:insert_juntasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_juntas3">
+      <wsdl:input message="tns:insert_juntas3SoapIn" />
+      <wsdl:output message="tns:insert_juntas3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_juntas">
+      <wsdl:input message="tns:update_juntasSoapIn" />
+      <wsdl:output message="tns:update_juntasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_juntas3">
+      <wsdl:input message="tns:update_juntas3SoapIn" />
+      <wsdl:output message="tns:update_juntas3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_juntas">
+      <wsdl:input message="tns:delete_juntasSoapIn" />
+      <wsdl:output message="tns:delete_juntasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_archivos">
+      <wsdl:input message="tns:get_archivosSoapIn" />
+      <wsdl:output message="tns:get_archivosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="serviciowebSoap" type="tns:serviciowebSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login_admin">
+      <soap:operation soapAction="http://tempuri.org/login_admin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="participantes">
+      <soap:operation soapAction="http://tempuri.org/participantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_update_huella">
+      <soap:operation soapAction="http://tempuri.org/insert_update_huella" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leer_reghuella">
+      <soap:operation soapAction="http://tempuri.org/leer_reghuella" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reg_asistencia">
+      <soap:operation soapAction="http://tempuri.org/reg_asistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reg_asistencia2">
+      <soap:operation soapAction="http://tempuri.org/reg_asistencia2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getdepartamentos">
+      <soap:operation soapAction="http://tempuri.org/getdepartamentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_objetivos">
+      <soap:operation soapAction="http://tempuri.org/get_objetivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_juntas">
+      <soap:operation soapAction="http://tempuri.org/get_juntas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_juntas">
+      <soap:operation soapAction="http://tempuri.org/insert_juntas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_juntas3">
+      <soap:operation soapAction="http://tempuri.org/insert_juntas3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_juntas">
+      <soap:operation soapAction="http://tempuri.org/update_juntas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_juntas3">
+      <soap:operation soapAction="http://tempuri.org/update_juntas3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_juntas">
+      <soap:operation soapAction="http://tempuri.org/delete_juntas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_archivos">
+      <soap:operation soapAction="http://tempuri.org/get_archivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="serviciowebSoap12" type="tns:serviciowebSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="login_admin">
+      <soap12:operation soapAction="http://tempuri.org/login_admin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="participantes">
+      <soap12:operation soapAction="http://tempuri.org/participantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_update_huella">
+      <soap12:operation soapAction="http://tempuri.org/insert_update_huella" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leer_reghuella">
+      <soap12:operation soapAction="http://tempuri.org/leer_reghuella" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reg_asistencia">
+      <soap12:operation soapAction="http://tempuri.org/reg_asistencia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reg_asistencia2">
+      <soap12:operation soapAction="http://tempuri.org/reg_asistencia2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getdepartamentos">
+      <soap12:operation soapAction="http://tempuri.org/getdepartamentos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_objetivos">
+      <soap12:operation soapAction="http://tempuri.org/get_objetivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_juntas">
+      <soap12:operation soapAction="http://tempuri.org/get_juntas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_juntas">
+      <soap12:operation soapAction="http://tempuri.org/insert_juntas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_juntas3">
+      <soap12:operation soapAction="http://tempuri.org/insert_juntas3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_juntas">
+      <soap12:operation soapAction="http://tempuri.org/update_juntas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_juntas3">
+      <soap12:operation soapAction="http://tempuri.org/update_juntas3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_juntas">
+      <soap12:operation soapAction="http://tempuri.org/delete_juntas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_archivos">
+      <soap12:operation soapAction="http://tempuri.org/get_archivos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="servicioweb">
+    <wsdl:port name="serviciowebSoap" binding="tns:serviciowebSoap">
+      <soap:address location="http://192.168.11.171:8880/ws4/servicioweb.asmx" />
+    </wsdl:port>
+    <wsdl:port name="serviciowebSoap12" binding="tns:serviciowebSoap12">
+      <soap12:address location="http://192.168.11.171:8880/ws4/servicioweb.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

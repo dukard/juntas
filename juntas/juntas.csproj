@@ -1,0 +1,356 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D621E59-4698-4086-A082-E4577C14C578}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>juntas</RootNamespace>
+    <AssemblyName>juntas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44398</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="intra_library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\intra_library.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="wlibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\wlibrary1.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aspx\alta_actividad.aspx" />
+    <Content Include="aspx\juntas.aspx" />
+    <Content Include="aspx\modal.aspx" />
+    <Content Include="aspx\objetivos.aspx" />
+    <Content Include="aspx\participantes.aspx" />
+    <Content Include="aspx\participantes2.aspx" />
+    <Content Include="aspx\permisos.aspx" />
+    <Content Include="bin\intra_library.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\wlibrary.dll" />
+    <Content Include="bin\wlibrary1.dll" />
+    <Content Include="Connected Services\cliente\juntas.cliente.delete_juntasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.getdepartamentosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.get_archivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.get_juntasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.get_objetivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.insert_juntas3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.insert_juntasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.insert_update_huellaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.leer_reghuellaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.login_adminResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.participantesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.reg_asistenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.update_juntas3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.update_juntasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\cliente\juntas.cliente.reg_asistencia2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\cliente\servicioweb.disco" />
+    <None Include="Connected Services\cliente\configuration91.svcinfo" />
+    <None Include="Connected Services\cliente\configuration.svcinfo" />
+    <None Include="Connected Services\cliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="css\estilo_popup2.css" />
+    <Content Include="css\estilo_popup4.css" />
+    <Content Include="css\jquery-ui4.css" />
+    <Content Include="html\waiting.html" />
+    <Content Include="html\waiting2.html" />
+    <Content Include="img\3.png" />
+    <Content Include="img\3a.png" />
+    <Content Include="img\3b.png" />
+    <Content Include="img\4.png" />
+    <Content Include="img\4a.png" />
+    <Content Include="img\4b.png" />
+    <Content Include="img\5.png" />
+    <Content Include="img\5a.png" />
+    <Content Include="img\5b.png" />
+    <Content Include="img\6.png" />
+    <Content Include="img\6a.png" />
+    <Content Include="img\6b.png" />
+    <Content Include="img\7.png" />
+    <Content Include="img\7a.png" />
+    <Content Include="img\7b.png" />
+    <Content Include="img\8.png" />
+    <Content Include="img\8a.png" />
+    <Content Include="img\8b.png" />
+    <Content Include="img\9.png" />
+    <Content Include="img\9a.png" />
+    <Content Include="img\9b.png" />
+    <Content Include="img\add.png" />
+    <Content Include="img\botonx.png" />
+    <Content Include="img\bregresar2.png" />
+    <Content Include="img\circle3.gif" />
+    <Content Include="img\enviar.png" />
+    <Content Include="img\equis2.png" />
+    <Content Include="img\images\back\bg-table-thead.png" />
+    <Content Include="img\images\back\collapse-light.png" />
+    <Content Include="img\images\back\collapse.png" />
+    <Content Include="img\images\back\expand-light.png" />
+    <Content Include="img\images\back\expand.png" />
+    <Content Include="img\images\back\file.png" />
+    <Content Include="img\images\back\folder.png" />
+    <Content Include="img\images\bg-table-thead.png" />
+    <Content Include="img\images\collapse-light.png" />
+    <Content Include="img\images\collapse.png" />
+    <Content Include="img\images\expand-light.png" />
+    <Content Include="img\images\expand.png" />
+    <Content Include="img\images\file.png" />
+    <Content Include="img\images\folder.png" />
+    <Content Include="img\impresora.png" />
+    <Content Include="img\plantilla01.png" />
+    <Content Include="img\plantilla02.png" />
+    <Content Include="img\pop\3.png" />
+    <Content Include="img\pop\3a.png" />
+    <Content Include="img\pop\3b.png" />
+    <Content Include="img\pop\4.png" />
+    <Content Include="img\pop\4a.png" />
+    <Content Include="img\pop\4b.png" />
+    <Content Include="img\pop\5.png" />
+    <Content Include="img\pop\5a.png" />
+    <Content Include="img\pop\5b.png" />
+    <Content Include="img\pop\6.png" />
+    <Content Include="img\pop\6a.png" />
+    <Content Include="img\pop\6b.png" />
+    <Content Include="img\pop\7.png" />
+    <Content Include="img\pop\7a.png" />
+    <Content Include="img\pop\7b.png" />
+    <Content Include="img\pop\8.png" />
+    <Content Include="img\pop\8a.png" />
+    <Content Include="img\pop\8b.png" />
+    <Content Include="img\pop\9.png" />
+    <Content Include="img\pop\9a.png" />
+    <Content Include="img\pop\9b.png" />
+    <Content Include="img\quick.png" />
+    <Content Include="img\reload.png" />
+    <Content Include="img\seguimiento.png" />
+    <Content Include="img\ui-icons_222222_256x240.png" />
+    <Content Include="img\ui-icons_2e83ff_256x240.png" />
+    <Content Include="img\ui-icons_444444_256x240.png" />
+    <Content Include="img\ui-icons_454545_256x240.png" />
+    <Content Include="img\ui-icons_555555_256x240.png" />
+    <Content Include="img\ui-icons_777620_256x240.png" />
+    <Content Include="img\ui-icons_777777_256x240.png" />
+    <Content Include="img\ui-icons_888888_256x240.png" />
+    <Content Include="img\ui-icons_cc0000_256x240.png" />
+    <Content Include="img\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="img\ui-icons_ffffff_256x240.png" />
+    <Content Include="img\wally9.png" />
+    <Content Include="index.aspx" />
+    <Content Include="js\filters.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery-ui4.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.reveal.js" />
+    <Content Include="js\plugin_popup.js" />
+    <Content Include="txt\db_location.txt" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aspx\alta_actividad.aspx.cs">
+      <DependentUpon>alta_actividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\alta_actividad.aspx.designer.cs">
+      <DependentUpon>alta_actividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\juntas.aspx.cs">
+      <DependentUpon>juntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\juntas.aspx.designer.cs">
+      <DependentUpon>juntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\modal.aspx.cs">
+      <DependentUpon>modal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\modal.aspx.designer.cs">
+      <DependentUpon>modal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\objetivos.aspx.cs">
+      <DependentUpon>objetivos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\objetivos.aspx.designer.cs">
+      <DependentUpon>objetivos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\participantes.aspx.cs">
+      <DependentUpon>participantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\participantes.aspx.designer.cs">
+      <DependentUpon>participantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\participantes2.aspx.cs">
+      <DependentUpon>participantes2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\participantes2.aspx.designer.cs">
+      <DependentUpon>participantes2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="aspx\permisos.aspx.cs">
+      <DependentUpon>permisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aspx\permisos.aspx.designer.cs">
+      <DependentUpon>permisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\cliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\cliente\servicioweb.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\cliente\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65012</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44398/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,60 @@
+/* Generic context menu styles */
+.contextMenu {
+	position: absolute;
+	width: 120px;
+	height: 76px;
+	z-index: 99999;
+	border: solid 1px #CCC;
+	padding: 0px;
+	margin: 0px;
+	display: none;
+}
+
+.contextMenu LI {
+	list-style: none;
+	height: 25px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.contextMenu A {
+	color: #333;
+	text-decoration: none;
+	display: block;
+	height: 25px;
+	background-position: 6px center;
+	background-repeat: no-repeat;
+	outline: none;
+	padding: 1px 5px;
+	padding-left: 35px;		
+}						
+
+.contextMenu img {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	-moz-opacity:0.3;
+	-khtml-opacity: 0.3;
+	opacity: 0.3;
+}
+
+.contextMenu LI.hover A {
+	/*color: #FFF;
+	background-color: #EAFAF8;*/
+}
+
+.contextMenu LI.disabled A {
+	color: #AAA;
+	cursor: default;
+}
+
+.contextMenu LI.hover.disabled A {
+	background-color: transparent;
+}
+
+.contextMenu LI.New A { background-image: url(../img/pop/3.png); }
+.contextMenu LI.Editar A { background-image: url(../img/pop/7.png); }
+.contextMenu LI.Acuerdos A {background-image: url(../img/8.png);}
+.contextMenu LI.Delete A { background-image: url(../img/pop/4.png); }
+.contextMenu LI.Pdetrabajo A {background-image: url(../img/9.png);}
+.contextMenu LI.crearPdf A {background-image: url(../img/5.png);}
+.contextMenu LI.Asistencia A {background-image: url(../img/6.png);}
