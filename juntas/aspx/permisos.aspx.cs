@@ -273,23 +273,26 @@ namespace juntas.aspx
                     {
                         gv4.HeaderRow.Cells[0].Text = "Id";
                         gv4.HeaderRow.Cells[0].HorizontalAlign = HorizontalAlign.Left;
-                        gv4.HeaderRow.Cells[1].Text = "Marca";
+                        gv4.HeaderRow.Cells[1].Text = "";
                         gv4.HeaderRow.Cells[1].HorizontalAlign = HorizontalAlign.Left;
-                        gv4.HeaderRow.Cells[2].Text = "Agencia";
+                        gv4.HeaderRow.Cells[2].Text = "Marca";
                         gv4.HeaderRow.Cells[2].HorizontalAlign = HorizontalAlign.Left;
-                        gv4.HeaderRow.Cells[3].Text = "Departamento";
+                        gv4.HeaderRow.Cells[3].Text = "Agencia";
                         gv4.HeaderRow.Cells[3].HorizontalAlign = HorizontalAlign.Left;
-                        gv4.HeaderRow.Cells[4].Text = "Puesto";
+                        gv4.HeaderRow.Cells[4].Text = "Departamento";
                         gv4.HeaderRow.Cells[4].HorizontalAlign = HorizontalAlign.Left;
-                        gv4.HeaderRow.Cells[5].Text = "Nombre";
+                        gv4.HeaderRow.Cells[5].Text = "Puesto";
                         gv4.HeaderRow.Cells[5].HorizontalAlign = HorizontalAlign.Left;
-                        gv4.HeaderRow.Cells[6].Text = "";
+                        gv4.HeaderRow.Cells[6].Text = "Nombre";
+                        gv4.HeaderRow.Cells[6].HorizontalAlign = HorizontalAlign.Left;
                         gv4.HeaderRow.Cells[7].Text = "";
+                        gv4.HeaderRow.Cells[7].HorizontalAlign = HorizontalAlign.Left;
                         gv4.HeaderRow.Cells[8].Text = "";
-                        gv4.HeaderRow.Cells[9].Text = "";
+                        gv4.HeaderRow.Cells[8].HorizontalAlign = HorizontalAlign.Left;
+                        /*gv4.HeaderRow.Cells[9].Text = "";
                         gv4.HeaderRow.Cells[10].Text = "";
                         gv4.HeaderRow.Cells[11].Text = "";
-                        gv4.HeaderRow.Cells[12].Text = "";
+                        gv4.HeaderRow.Cells[12].Text = "";*/
                     }
 
                     Panel div = new Panel();
@@ -355,7 +358,7 @@ namespace juntas.aspx
                     e.Row.Cells[8].Text = "";
                     e.Row.Cells[8].Controls.Add(div);
                     div = null;
-
+                    /****
                     div = new Panel();
                     div.ID = "ol9_" + ids;
                     div.Controls.Add(new LiteralControl(e.Row.Cells[9].Text.Trim()));
@@ -383,6 +386,7 @@ namespace juntas.aspx
                     e.Row.Cells[12].Text = "";
                     e.Row.Cells[12].Controls.Add(div);
                     div = null;
+                    ******/
                 }
             }
             catch (Exception er)
@@ -396,7 +400,7 @@ namespace juntas.aspx
             funciones obj = new funciones();
             try
             {
-                if (obj.conexion("cons", "select * from Tparticipantes with (nolock) where idadmin='" + idadmin.Value + "' order by marca,agencia,departamento,puesto"))
+                if (obj.conexion("cons", "select * from Tparticipantes2 with (nolock) where idadmin='" + idadmin.Value + "' order by marca,agencia,departamento,puesto"))
                 {
                     if (obj.dt.Rows.Count < 1)
                     {

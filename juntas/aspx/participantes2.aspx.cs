@@ -56,7 +56,23 @@ namespace juntas.aspx
         protected void llena_datos()
         {
             try
-            {                
+            {
+                if (show_info3())
+                {
+                    gv4.DataSource = dt;
+                    dt.Dispose();
+                    gv4.DataBind();
+                }
+                else
+                {
+                    if (error != "Sin Datos")
+                    {
+                        Response.Write(error);
+                        dt.Dispose();
+                    }
+                }
+
+
                 if (func_participantes())
                 {
                     gv.DataSource = dt;
@@ -240,7 +256,88 @@ namespace juntas.aspx
             }
         }
 
-        
+
+        protected void data_enlace4(object sender, GridViewRowEventArgs e)
+        {
+            try
+            {
+                if (e.Row.DataItemIndex > -1)
+                {
+                    if (e.Row.DataItemIndex == 0)
+                    {
+                        gv4.HeaderRow.Cells[0].Text = "Departamento";
+                        gv4.HeaderRow.Cells[0].HorizontalAlign = HorizontalAlign.Left;
+                        gv4.HeaderRow.Cells[1].Text = "Puesto";
+                        gv4.HeaderRow.Cells[1].HorizontalAlign = HorizontalAlign.Left;
+                    }
+
+                    Panel div = new Panel();
+                    String ids = e.Row.Cells[0].Text.ToString();
+                    div.ID = "ol0_" + ids;
+                    div.Controls.Add(new LiteralControl(ids));
+                    e.Row.Cells[0].Text = "";
+                    e.Row.Cells[0].Controls.Add(div);
+                    div = null;
+
+                    div = new Panel();
+                    div.ID = "ol1_" + ids;
+                    div.Controls.Add(new LiteralControl(e.Row.Cells[1].Text.Trim()));
+                    e.Row.Cells[1].Text = "";
+                    e.Row.Cells[1].Controls.Add(div);
+                    div = null;
+                }
+            }
+            catch (Exception er)
+            {
+                Response.Write(er.ToString());
+            }
+        }
+
+
+
+        public bool show_info3()
+        {
+            funciones obj = new funciones();
+            try
+            {
+                if (obj.conexion("cons", "select departamento,puesto from dptos_puestos with (nolock) order by departamento,puesto"))
+                {
+                    if (obj.dt.Rows.Count < 1)
+                    {
+                        error = "Sin Datos";
+                        obj.dt.Dispose();
+                        obj.dt = null;
+                        dt.Dispose();
+                        dt = null;
+                        obj = null;
+                        return false;
+                    }
+                    else
+                    {
+                        dt = obj.dt.Copy();
+                        obj.dt.Dispose();
+                        obj.dt = null;
+                        obj = null;
+                        return true;
+                    }
+                }
+                else
+                {
+                    error = obj.error;
+                    obj.error = null;
+                    obj.dt.Dispose();
+                    return false;
+                }
+            }
+            catch (Exception er)
+            {
+                error = er.ToString();
+                obj.dt.Dispose();
+                return false;
+            }
+        }
+
+
 
         public bool func_participantes()
         {

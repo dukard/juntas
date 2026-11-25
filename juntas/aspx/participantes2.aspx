@@ -81,7 +81,16 @@
             /*$("[id^='gv_nek6']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;width:210px;display:none;");
             $("[id^='gv_nek7']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;width:120px;display:none;");*/
             $("[id^='gv_nek8']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;width:130px;");
-            
+            otravez4();
+            $("#gv4").attr("style", "border-collapse:collapse;");
+            $("[id^='gv4_ol0']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;");
+            $("[id^='gv4_ol1']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:250px;");
+            $("#lacab2").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;color:#FFFFFF");
+            $("#lacab2").attr("align", "left");
+            $("[class^='alu']").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;");
+            $("[class^='alu']").hover(estilo5, estilo6);
+            $("[class^='alu']").click(function () { $("#t2").val($.trim($("#" + $(this).attr("id") + " td:nth-child(1)").text().toString())); $("#t3").val($.trim($("#" + $(this).attr("id") + " td:nth-child(2)").text().toString())); });
+            $("#larow8").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#380865;color:#FFFFFF");
             $("#larow").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#380865;color:#FFFFFF");          
             $("#encab0").attr("style", "font-size:15px;background-color:#FFFFFF;color:#FFFFFF");
             $("[class^='hor']").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;");
@@ -200,7 +209,25 @@
         );
         }
 
-        
+
+        function otravez4() {
+            var i;
+
+            i = 0;
+            $("#gv4 tr").each(function () {
+                if (i > 0) {
+                    //$(this).attr("id", $.trim($(this).children(":eq(0)").text()) + "_" + i + "gv4");
+                    $(this).attr("id", i + "gv4");
+                    $(this).attr("class", "alu" + i);
+                    $(this).children(":first").attr("id", "ans" + i);
+                }
+                else {
+                    $(this).attr("id", "lacab2");
+                }
+                i++;
+            }
+            );
+        }
 
         function estilo1() {
             $("#" + $(this).attr("id")).attr("style", "font-size:15px;font-weight: bold;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#DBBCF8;cursor:pointer;");
@@ -209,6 +236,15 @@
         function estilo2() {
             $("#" + $(this).attr("id")).attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;cursor:default;");
         }
+
+        function estilo5() {
+            $("#" + $(this).attr("id")).attr("style", "font-size:15px;font-weight: bold;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#DBBCF8;cursor:pointer;");
+        }
+
+        function estilo6() {
+            $("#" + $(this).attr("id")).attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;cursor:default;");
+        }
+
 
         function po1() {
             var id = $(this).attr("id");
@@ -291,6 +327,23 @@
          <td align="right">Puesto:</td>
          <td><asp:TextBox ID="t3" runat="server" MaxLength="100" Width="400px"></asp:TextBox></td>
          </tr>
+         <tr id="secreto8">
+         <td align="right" valign="top"></td>
+         <td>         
+         <table cellspacing="1" style="border-collapse:collapse;">
+         <tr id="larow8">
+         <th align="left" width="160">Departamento</th>
+         <th align="left" width="260">Puesto</th>
+         </tr>
+         </table>
+   <asp:Panel ID="pan21" runat="server" Height="310px" ScrollBars="Auto">
+    <asp:GridView ID="gv4" runat="server" GridLines="None" onrowdatabound="data_enlace4"></asp:GridView>
+  </asp:Panel>
+</td>
+</tr>
+
+
+
          <tr>
          <td align="right">Email:</td>
          <td><asp:TextBox ID="t4" runat="server" MaxLength="50" Width="400px"></asp:TextBox></td>

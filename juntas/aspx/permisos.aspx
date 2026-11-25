@@ -78,23 +78,23 @@
             otravez4();
             $("#gv4").attr("style", "border-collapse:collapse;");
             $("[id^='gv4_ol0']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:40px;");
-            $("[id^='gv4_ol1']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;");
+            $("[id^='gv4_ol1']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;display:none;");
             $("[id^='gv4_ol2']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;");
             $("[id^='gv4_ol3']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:200px;");
             $("[id^='gv4_ol4']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:200px;");
             $("[id^='gv4_ol5']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:300px;");
-            $("[id^='gv4_ol6']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;display:none;");
+            $("[id^='gv4_ol6']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;");
             $("[id^='gv4_ol7']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:250px;display:none;");
             $("[id^='gv4_ol8']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;display:none;");
-            $("[id^='gv4_ol9']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:250px;display:none;");
+            /*$("[id^='gv4_ol9']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:250px;display:none;");
             $("[id^='gv4_ol10']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;display:none;");
             $("[id^='gv4_ol11']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:250px;display:none;");
-            $("[id^='gv4_ol12']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;display:none;");
+            $("[id^='gv4_ol12']").attr("style", "padding: 0px 0px 0px 5px;overflow:hidden;height:20px;width:150px;display:none;");*/
             $("#lacab2").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;color:#FFFFFF");
             $("#lacab2").attr("align", "left");
             $("[class^='alu']").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#FFFFFF;");
             $("[class^='alu']").hover(estilo5, estilo6);
-            $("[class^='alu']").click(function () { $("#idparticipante").val($.trim($("#" + $(this).attr("id") + " td:nth-child(1)").text().toString())); $("#t5").val($.trim($("#" + $(this).attr("id") + " td:nth-child(6)").text().toString())); });
+            $("[class^='alu']").click(function () { $("#idparticipante").val($.trim($("#" + $(this).attr("id") + " td:nth-child(1)").text().toString())); alert($("#idparticipante").val()); $("#t5").val($.trim($("#" + $(this).attr("id") + " td:nth-child(6)").text().toString())); alert($("#t5").val()); });
             $("#larow").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#380865;color:#FFFFFF");
             $("#larow2").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#380865;color:#FFFFFF");
             $("#larow8").attr("style", "font-size:15px;border-right-style:groove;border-left-style:groove;border-bottom-style:groove;border-right-width:thin;border-left-width:thin;border-bottom-width:thin;border-top-style: groove;border-top-width: thin;background-color:#380865;color:#FFFFFF");
